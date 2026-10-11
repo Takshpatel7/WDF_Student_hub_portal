@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Hub Portal - FAQ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Accessibility Skip Link (Practical 2) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" class="logo"></a>
+      <strong>Student Hub Portal</strong>
+    </div>
+    <div class="headerlinks">
+      <button onclick="toggleTheme()" aria-label="Toggle Theme">🌓 Theme</button>
+      <button><a href="login.html">Login</a></button>
+      <button><a href="register.html">Register</a></button>
+    </div>
+  </header>
+
+  <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">☰ Menu</button>
+    <nav id="nav-menu" align="center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="faq.html" style="background-color: rgba(255, 255, 255, 0.2); color: #DAF264; font-weight: bold;">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 1150px; width: 100%; margin: 20px auto; padding: 10px;">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="font-size: 13px; color: #CBD5E1; margin-bottom: 15px;">
+      <a href="index.html" style="color: #EC9F05; text-decoration: none;">Home</a> &raquo;
+      <span>Frequently Asked Questions</span>
+    </nav>
+
+    <h1 style="font-size: 32px; text-align: center; margin-bottom: 6px;">Frequently Asked Questions</h1>
+    <p style="text-align: center; color: #CBD5E1; margin-bottom: 20px; font-size: 15px;">
+      Quick answers to common questions about Student Hub Portal, events, and academics
+    </p>
+
+    <!-- Practical 4 & 6: Live FAQ Search Bar -->
+    <div class="table1" style="max-width: 600px; margin: 0 auto 24px auto; padding: 12px 20px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <label for="faqSearchInput" style="font-weight: bold; color: #EC9F05; white-space: nowrap;">🔍 Search FAQ:</label>
+        <input type="text" id="faqSearchInput" oninput="filterFaqs(this.value)" placeholder="Search any question or keyword..." style="margin-bottom: 0;">
+      </div>
+    </div>
+
+    <!-- 2-Column FAQ Layout -->
+    <div class="dash-cards-flex" style="align-items: stretch; gap: 24px;">
+      
+      <!-- Category 1: Portal & Student Account -->
+      <div class="table1" style="flex: 1; padding: 26px;">
+        <h2 style="font-size: 22px; color: #EC9F05; margin-bottom: 12px; border-bottom: 1.5px solid #6B4EFD; padding-bottom: 8px;">
+          🎓 Portal &amp; Student Account
+        </h2>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Q. How do I register as a student?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Click on the 'Register' button in the top menu, fill in your details (Name, Email, Course, Semester), accept the terms, and submit your registration.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Q. How do I log in to my dashboard?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Go to the Login page, enter your registered email address and password, then click the 'Login' button to open your student dashboard.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Q. What is my Student ID format?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>For 3rd Semester Computer Science students, IDs follow the format <strong>25DCS200</strong>, visible in your profile and dashboard.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Q. Where can I see my enrolled subjects?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your Dashboard features a dedicated Sem 3 section listing your 5 registered subjects: WDF, FCN, DSA, Discrete Maths, and Java OOP.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: Events & Campus Life -->
+      <div class="table1" style="flex: 1; padding: 26px;">
+        <h2 style="font-size: 22px; color: #EC9F05; margin-bottom: 12px; border-bottom: 1.5px solid #6B4EFD; padding-bottom: 8px;">
+          📅 Events &amp; Campus Notices
+        </h2>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Q. How can I join college events?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Navigate to the Events page, browse available workshops or competitions, and click 'Register' for your selected event to reserve your entry slot.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Q. Where do I find exam dates and notices?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Official circulars, exam dates, and assignment deadlines are published on the Home page notice board and on your Dashboard.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Q. Are workshop seats limited?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, hands-on technical workshops (like Cyber Security, AI &amp; Robotics) have limited lab capacity and are allocated first-come, first-served.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            <span>Q. How do I contact the college admin?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can use the Contact page form or send an email to <strong>support@studenthub.com</strong> to get in touch directly with the administration.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Help Card -->
+    <div class="table1" style="padding: 22px; text-align: center; margin-top: 24px;">
+      <h3 style="color: #EC9F05; margin-bottom: 6px;">Still have questions?</h3>
+      <p style="color: #CBD5E1; margin-bottom: 16px; font-size: 15px;">
+        Can't find the answer you are looking for? Reach out to our campus support team.
+      </p>
+      <a href="contact.html" style="display: inline-block; background-color: #EC9F05; color: white; padding: 10px 24px; border-radius: 20px; font-weight: bold; text-decoration: none;">Contact Support &rarr;</a>
+    </div>
+
+  </main>
+
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Hub Portal - About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Accessibility Skip Link (Practical 2) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" class="logo"></a>
+      <strong>Student Hub Portal</strong>
+    </div>
+    <div class="headerlinks">
+      <button onclick="toggleTheme()" aria-label="Toggle Theme">🌓 Theme</button>
+      <button><a href="login.html">Login</a></button>
+      <button><a href="register.html">Register</a></button>
+    </div>
+  </header>
+
+  <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">☰ Menu</button>
+    <nav id="nav-menu" align="center">
+      <a href="index.html">Home</a>
+      <a href="about.html" style="background-color: rgba(255, 255, 255, 0.2); color: #DAF264; font-weight: bold;">About</a>
+      <a href="events.html">Events</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 900px; margin: 0 auto; text-align: center; padding: 10px;">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="font-size: 13px; color: #CBD5E1; margin-bottom: 15px; text-align: left;">
+      <a href="index.html" style="color: #EC9F05; text-decoration: none;">Home</a> &raquo;
+      <span>About</span>
+    </nav>
+
+    <h1 style="font-size: 32px; margin-bottom: 20px;">About Student Hub</h1>
+    
+    <div style="display: flex; gap: 20px;" class="boxes-container">
+      <div class="boxes2">
+        <p style="font-size: 26px; font-weight: bold;">Our Mission</p>
+        <p style="font-size: 18px;">To eliminate communication gaps across campus by delivering real-time updates and effortless management tools for every student.</p>
+      </div>
+      <div class="boxes2">
+        <p style="font-size: 26px; font-weight: bold;">Our Vision</p>
+        <p style="font-size: 18px;">To build a modern, fully digital campus ecosystem where information is accessible anywhere, anytime with zero operational friction.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

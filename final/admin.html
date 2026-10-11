@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Hub Portal - Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Accessibility Skip Link (Practical 2) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" height="45"
+          style="vertical-align: middle; margin-right: 8px;"></a>
+      <strong style="margin: 10px;">Admin Panel</strong>
+    </div>
+    <div class="headerlinks">
+      <button onclick="toggleTheme()" aria-label="Toggle Theme">🌓 Theme</button>
+      <button onclick="handleLogout()">Logout</button>
+    </div>
+  </header>
+
+  <div class="navlinks">
+    <nav align="center">
+      <a href="admin.html">Dashboard</a> |
+      <a href="events.html">Events</a> |
+      <a href="view_records.php">Stored Records</a> |
+      <a href="test_db.php">Database Test</a> |
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 1000px; margin: 20px auto; padding: 10px;">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="font-size: 13px; color: #CBD5E1; margin-bottom: 12px;">
+      <a href="index.html" style="color: #EC9F05; text-decoration: none;">Home</a> &raquo;
+      <span>Admin Dashboard</span>
+    </nav>
+
+    <!-- Stats Grid -->
+    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+      <div class="table1" style="flex: 1; text-align: center; min-width: 200px; padding: 20px;">
+        <h3 style="font-size: 22px; color: #EC9F05; margin: 0;">Students</h3>
+        <h1 style="font-size: 42px; margin: 10px 0 0 0;">250</h1>
+      </div>
+      <div class="table1" style="flex: 1; text-align: center; min-width: 200px; padding: 20px;">
+        <h3 style="font-size: 22px; color: #EC9F05; margin: 0;">Events</h3>
+        <h1 style="font-size: 42px; margin: 10px 0 0 0;">12</h1>
+      </div>
+      <div class="table1" style="flex: 1; text-align: center; min-width: 200px; padding: 20px;">
+        <h3 style="font-size: 22px; color: #EC9F05; margin: 0;">Feedback</h3>
+        <h1 style="font-size: 42px; margin: 10px 0 0 0;">18</h1>
+      </div>
+      <div class="table1" style="flex: 1; text-align: center; min-width: 200px; padding: 20px;">
+        <h3 style="font-size: 22px; color: #EC9F05; margin: 0;">Notices</h3>
+        <h1 style="font-size: 42px; margin: 10px 0 0 0;">7</h1>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Recent Activities Card -->
+    <div class="table1" style="padding: 25px;">
+      <h3 style="font-size: 26px; color: #EC9F05; margin-top: 0;">Recent Activities</h3>
+      <ul style="font-size: 18px; line-height: 1.8;">
+        <li>Student Registered</li>
+        <li>Event Added</li>
+        <li>Feedback Submitted</li>
+      </ul>
+    </div>
+  </main>
+  <br>
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a> |
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Protect Admin Panel from unauthorized access
+    checkAdminAuth();
+  </script>
+</body>
+
+</html>

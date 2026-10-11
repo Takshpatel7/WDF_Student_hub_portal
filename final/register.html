@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student Hub Portal - Student Registration Form with real-time validation and error handling">
+  <title>Student Hub Portal - Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Practical 2 Extension: Skip-to-content accessibility link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" class="logo"></a>
+      <strong>Student Hub Portal</strong>
+    </div>
+    <div class="headerlinks">
+      <button onclick="toggleTheme()" aria-label="Toggle Dark/Light theme">🌓 Theme</button>
+      <button><a href="login.html">Login</a></button>
+      <button><a href="register.html">Register</a></button>
+    </div>
+  </header>
+
+  <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">☰ Menu</button>
+    <nav id="nav-menu" align="center" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <!-- Practical 2 Extension: Breadcrumb Navigation -->
+    <div style="max-width: 700px; margin: 15px auto 0 auto; padding: 0 10px;">
+      <nav aria-label="Breadcrumb" style="font-size: 13px; color: #CBD5E1;">
+        <a href="index.html" style="color: #EC9F05; text-decoration: none;">Home</a> &raquo;
+        <span>Student Registration</span>
+      </nav>
+    </div>
+
+    <!-- Student Registration Box (Practicals 2, 5 & 7) -->
+    <div class="auth-card register-card">
+      <h2>STUDENT REGISTRATION</h2>
+      <p style="text-align: center; color: #CBD5E1; font-size: 13px; margin-bottom: 20px;">
+        Complete all fields below. Validated on frontend (JS Regex) &amp; backend (PHP).
+      </p>
+
+      <form id="registrationForm" action="process_register.php" method="POST" onsubmit="return validateRegistration(event)">
+        <!-- CSRF Token for Security (Practical 7 Advanced) -->
+        <input type="hidden" name="csrf_token" value="sh_csrf_token_register_2026">
+
+        <div class="form-grid">
+          <!-- 1. Full Name -->
+          <div class="form-group">
+            <label for="name">Full Name <span style="color: #FF5252;">*</span></label>
+            <input type="text" id="name" name="name" placeholder="e.g. John Doe" required oninput="checkNameRealtime()">
+            <small class="error-text" id="nameError"></small>
+          </div>
+
+          <!-- 2. Email -->
+          <div class="form-group">
+            <label for="email">Email Address <span style="color: #FF5252;">*</span></label>
+            <input type="email" id="email" name="email" placeholder="e.g. john.doe@studenthub.edu" required oninput="checkEmailRealtime()">
+            <small class="error-text" id="emailError"></small>
+          </div>
+
+          <!-- 3. Mobile Number -->
+          <div class="form-group">
+            <label for="mobile">Mobile Number <span style="color: #FF5252;">*</span></label>
+            <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number" required oninput="checkMobileRealtime()">
+            <small class="error-text" id="mobileError"></small>
+          </div>
+
+          <!-- 4. Course -->
+          <div class="form-group">
+            <label for="course">Course <span style="color: #FF5252;">*</span></label>
+            <select id="course" name="course" required onchange="checkCourseRealtime()">
+              <option value="">-- Select Course --</option>
+              <option value="B.Tech Computer Science">B.Tech Computer Science</option>
+              <option value="B.Tech Information Technology">B.Tech Information Technology</option>
+              <option value="BCA">BCA</option>
+              <option value="MCA">MCA</option>
+              <option value="B.Sc IT">B.Sc IT</option>
+            </select>
+            <small class="error-text" id="courseError"></small>
+          </div>
+
+          <!-- 5. Year -->
+          <div class="form-group">
+            <label for="year">Year of Study (1 - 4) <span style="color: #FF5252;">*</span></label>
+            <input type="number" id="year" name="year" min="1" max="4" placeholder="Enter Year (1 - 4)" required oninput="checkYearRealtime()">
+            <small class="error-text" id="yearError"></small>
+          </div>
+
+          <!-- 6. Gender -->
+          <div class="form-group">
+            <label>Gender <span style="color: #FF5252;">*</span></label>
+            <div class="radio-group">
+              <label for="male">
+                <input type="radio" name="gender" id="male" value="Male" required onchange="checkGenderRealtime()"> Male
+              </label>
+              <label for="female">
+                <input type="radio" name="gender" id="female" value="Female" onchange="checkGenderRealtime()"> Female
+              </label>
+              <label for="other">
+                <input type="radio" name="gender" id="other" value="Other" onchange="checkGenderRealtime()"> Other
+              </label>
+            </div>
+            <small class="error-text" id="genderError"></small>
+          </div>
+
+          <!-- 7. Password -->
+          <div class="form-group">
+            <label for="password">Password <span style="color: #FF5252;">*</span></label>
+            <input type="password" id="password" name="password" placeholder="Min 6 chars (letters &amp; numbers)" required oninput="updatePasswordStrength()">
+            
+            <!-- Practical 5: Password Strength Meter -->
+            <div class="password-meter-wrap">
+              <div class="meter-track">
+                <div id="passwordMeterBar" class="meter-fill"></div>
+              </div>
+              <div class="meter-label">
+                <span>Strength:</span>
+                <span id="passwordMeterText" style="color: #94A3B8;">Enter password</span>
+              </div>
+            </div>
+            <small class="error-text" id="passwordError"></small>
+          </div>
+
+          <!-- 8. Confirm Password -->
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password <span style="color: #FF5252;">*</span></label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-type password" required oninput="checkConfirmPasswordRealtime()">
+            <small class="error-text" id="confirmPasswordError"></small>
+          </div>
+        </div>
+
+        <!-- 9. Terms Acceptance -->
+        <div class="form-options center-terms">
+          <label for="terms">
+            <input type="checkbox" id="terms" name="terms" required onchange="checkTermsRealtime()"> I accept the Terms &amp; Conditions
+          </label>
+          <small class="error-text" id="termsError"></small>
+        </div>
+
+        <button type="submit" class="auth-btn">Register</button>
+
+        <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #CBD5E1;">
+          <a href="view_records.php" style="color: #DAF264; text-decoration: underline;">📂 View Stored CSV/JSON Records (Practical 7)</a>
+        </div>
+
+        <p class="auth-footer-text">
+          Already registered? <a href="login.html">Login here</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a> &bull;
+        <a href="contact.html">Contact</a> &bull;
+        <a href="feedback.html">Feedback</a> &bull;
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

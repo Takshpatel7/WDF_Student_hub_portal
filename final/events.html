@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Hub Portal - Events (Practical 6)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Accessibility Skip Link (Practical 2) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" class="logo"></a>
+      <strong>Student Hub Portal</strong>
+    </div>
+    <div class="headerlinks">
+      <button onclick="toggleTheme()" aria-label="Toggle Theme">🌓 Theme</button>
+      <button><a href="login.html">Logout</a></button>
+    </div>
+  </header>
+
+  <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">☰ Menu</button>
+    <nav id="nav-menu" align="center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html" style="background-color: rgba(255, 255, 255, 0.2); color: #DAF264; font-weight: bold;">Events</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 1150px; width: 100%; margin: 20px auto; padding: 10px;">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="font-size: 13px; color: #CBD5E1; margin-bottom: 12px;">
+      <a href="index.html" style="color: #EC9F05; text-decoration: none;">Home</a> &raquo;
+      <span>Events</span>
+    </nav>
+
+    <h1 style="font-size: 32px; text-align: center; margin-bottom: 6px;">College Events</h1>
+    <p style="text-align: center; color: #CBD5E1; margin-bottom: 24px; font-size: 15px;">
+      Explore upcoming campus workshops, sports competitions, and cultural festivals (Fetched dynamically from external JSON)
+    </p>
+
+    <!-- Practical 6: Search, Category Filter, and Sorting Controls Toolbar -->
+    <div class="table1" id="events-toolbar-card" style="padding: 18px 24px; margin-bottom: 24px;">
+      <div class="events-toolbar">
+        
+        <!-- Live Search Input -->
+        <div class="search-box-wrap">
+          <label for="search" style="font-weight: bold; color: #EC9F05; white-space: nowrap;">Search:</label>
+          <input type="text" id="search" oninput="applyEventFilters()" placeholder="Search by title, venue, category...">
+        </div>
+
+        <!-- Filter, Sort and Reset Controls -->
+        <div class="controls-group">
+          <!-- Category Filter -->
+          <label for="categoryFilter" style="font-weight: bold; color: #EC9F05; font-size: 14px; white-space: nowrap;">Category:</label>
+          <select id="categoryFilter" onchange="applyEventFilters()">
+            <option value="ALL">All Categories</option>
+            <option value="SPORTS">Sports</option>
+            <option value="TECH">Technology</option>
+            <option value="WORKSHOP">Workshops</option>
+            <option value="CULTURAL">Cultural</option>
+            <option value="ACADEMIC">Academic</option>
+          </select>
+
+          <!-- Sorting Dropdown -->
+          <label for="sortOrder" style="font-weight: bold; color: #EC9F05; font-size: 14px; white-space: nowrap;">Sort by:</label>
+          <select id="sortOrder" onchange="applyEventFilters()">
+            <option value="date-asc">Date (Earliest First)</option>
+            <option value="date-desc">Date (Latest First)</option>
+            <option value="name-asc">Name (A &rarr; Z)</option>
+            <option value="name-desc">Name (Z &rarr; A)</option>
+          </select>
+
+          <!-- Reset Filter Button -->
+          <button onclick="resetEventFilters()" style="padding: 9px 18px; font-size: 14px;">Reset</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Dynamic Events List Container (Populated via Fetch API) -->
+    <div id="events-list">
+      <!-- Dynamically generated event cards appear here -->
+    </div>
+
+    <!-- Practical 6 Pagination Controls -->
+    <div id="pagination-controls" class="pagination-container">
+      <!-- Dynamically generated page buttons appear here -->
+    </div>
+
+  </main>
+
+  <!-- Universal Event Registration Modal -->
+  <div id="dynamicEventModal" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('dynamicEventModal')">&times;</button>
+      <h2 id="modalEventTitle" style="color: #EC9F05; margin-bottom: 12px; font-size: 22px;">Register for Event</h2>
+      <p id="modalEventDetails" style="margin-bottom: 20px; color: #CBD5E1; font-size: 15px;"></p>
+      <button onclick="confirmEventRegistration()" style="padding: 10px 28px; font-size: 15px;">Confirm Registration</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Hub Portal - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Accessibility Skip Link (Practical 2) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" class="logo"></a>
+      <strong>Student Hub Portal</strong>
+    </div>
+    <div class="headerlinks">
+      <button onclick="toggleTheme()" aria-label="Toggle Theme">🌓 Theme</button>
+      <button><a href="login.html">Login</a></button>
+      <button><a href="register.html">Register</a></button>
+    </div>
+  </header>
+
+  <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">☰ Menu</button>
+    <nav id="nav-menu" align="center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="login.html" style="background-color: rgba(255, 255, 255, 0.2); color: #DAF264; font-weight: bold;">Login</a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <!-- Breadcrumb -->
+    <div style="max-width: 480px; margin: 15px auto 0 auto; padding: 0 10px;">
+      <nav aria-label="Breadcrumb" style="font-size: 13px; color: #CBD5E1;">
+        <a href="index.html" style="color: #EC9F05; text-decoration: none;">Home</a> &raquo;
+        <span>Login</span>
+      </nav>
+    </div>
+
+    <!-- Login Box -->
+    <div class="auth-card">
+      <h2>LOGIN</h2>
+
+      <div id="login-error-msg" style="color: #FF5252; font-size: 13px; margin-bottom: 14px; text-align: center; display: none; background: rgba(255, 82, 82, 0.15); padding: 8px; border-radius: 8px;"></div>
+
+      <form onsubmit="handlePortalLogin(event)">
+        <div class="form-group">
+          <label for="email">Student ID or Email</label>
+          <input type="text" id="email" required placeholder="e.g. 25DCS200 or admin@studenthub.com">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="Enter your password">
+        </div>
+
+        <div class="form-options">
+          <label for="remember">
+            <input type="checkbox" id="remember"> Remember Me
+          </label>
+          <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="auth-btn">Login &rarr;</button>
+
+        <!-- Credentials Helper Box -->
+        <div style="margin-top: 18px; padding: 12px 14px; background-color: #141E2E; border-radius: 12px; border-left: 3px solid #EC9F05; font-size: 12px; color: #CBD5E1; text-align: left;">
+          <strong style="color: #EC9F05; font-size: 13px;">🔑 Login Credentials:</strong>
+          
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+            <span>&bull; <strong>Student:</strong> <code>25DCS200</code> / <code>student123</code></span>
+            <button type="button" onclick="fillCredentials('25DCS200', 'student123')" style="padding: 3px 8px; font-size: 11px; border-radius: 6px; background-color: #6B4EFD;">Fill</button>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px;">
+            <span>&bull; <strong>Admin:</strong> <code>admin@studenthub.com</code> / <code>admin123</code></span>
+            <button type="button" onclick="fillCredentials('admin@studenthub.com', 'admin123')" style="padding: 3px 8px; font-size: 11px; border-radius: 6px; background-color: #6B4EFD;">Fill</button>
+          </div>
+        </div>
+
+        <p class="auth-footer-text">
+          Don't have an account? <a href="register.html">Register here</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

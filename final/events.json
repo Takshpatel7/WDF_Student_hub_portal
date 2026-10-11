@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "title": "SPOURAL – 2026",
+    "category": "SPORTS",
+    "date": "2026-10-25",
+    "displayDate": "October 25, 2026",
+    "venue": "College Main Ground",
+    "description": "Annual Inter-College Sports & Athletics Championship featuring cricket, football, and track events."
+  },
+  {
+    "id": 2,
+    "title": "Cyber Security Workshop",
+    "category": "TECH",
+    "date": "2026-11-10",
+    "displayDate": "November 10, 2026",
+    "venue": "Auditorium B",
+    "description": "Hands-on Ethical Hacking, Network Defense & Web Security Bootcamp with industry mentors."
+  },
+  {
+    "id": 3,
+    "title": "AI & Robotics Workshop",
+    "category": "WORKSHOP",
+    "date": "2026-11-22",
+    "displayDate": "November 22, 2026",
+    "venue": "Computer Lab 3",
+    "description": "Practical Machine Learning, Arduino interfacing & Autonomous Bot design session."
+  },
+  {
+    "id": 4,
+    "title": "Tarang Cultural Fest",
+    "category": "CULTURAL",
+    "date": "2026-12-05",
+    "displayDate": "December 05, 2026",
+    "venue": "Open Air Amphitheater",
+    "description": "Annual Youth Festival featuring Music, Drama, Dance, Fashion, and Fine Arts competitions."
+  },
+  {
+    "id": 5,
+    "title": "WDF Web Development Hackathon",
+    "category": "TECH",
+    "date": "2026-12-15",
+    "displayDate": "December 15, 2026",
+    "venue": "IT Lab 2",
+    "description": "24-hour Full-Stack Web App Development Challenge using HTML5, CSS3, JS, PHP & MySQL."
+  },
+  {
+    "id": 6,
+    "title": "DSA CodeSprint Contest",
+    "category": "ACADEMIC",
+    "date": "2026-12-20",
+    "displayDate": "December 20, 2026",
+    "venue": "Online Portal & Lab 1",
+    "description": "Algorithmic Problem Solving, LeetCode style challenges, and Competitive Coding battle."
+  },
+  {
+    "id": 7,
+    "title": "Java OOP Project Exhibition",
+    "category": "ACADEMIC",
+    "date": "2026-12-28",
+    "displayDate": "December 28, 2026",
+    "venue": "Seminar Hall A",
+    "description": "Semester 3 Java Object-Oriented Software Projects Showcase evaluated by academic leads."
+  },
+  {
+    "id": 8,
+    "title": "Networking & FCN Hands-on Lab",
+    "category": "WORKSHOP",
+    "date": "2027-01-08",
+    "displayDate": "January 08, 2027",
+    "venue": "Cisco Networking Lab",
+    "description": "Practical Packet Tracer, IP Subnetting, Routing Protocols & Network Simulation."
+  },
+  {
+    "id": 9,
+    "title": "Cloud Computing & DevOps Summit",
+    "category": "TECH",
+    "date": "2027-01-18",
+    "displayDate": "January 18, 2027",
+    "venue": "Conference Hall C",
+    "description": "Explore Docker, Kubernetes, AWS infrastructure deployment, and modern CI/CD pipelines."
+  },
+  {
+    "id": 10,
+    "title": "Inter-Department Badminton League",
+    "category": "SPORTS",
+    "date": "2027-01-25",
+    "displayDate": "January 25, 2027",
+    "venue": "Indoor Sports Complex",
+    "description": "Men's and Women's singles and doubles tournament with university-wide participation."
+  },
+  {
+    "id": 11,
+    "title": "National Technical Paper Presentation",
+    "category": "ACADEMIC",
+    "date": "2027-02-05",
+    "displayDate": "February 05, 2027",
+    "venue": "Auditorium A",
+    "description": "Present original engineering research papers across AI, IoT, Blockchain, and Cyber Security."
+  },
+  {
+    "id": 12,
+    "title": "UI/UX Design Sprint Bootcamp",
+    "category": "WORKSHOP",
+    "date": "2027-02-14",
+    "displayDate": "February 14, 2027",
+    "venue": "Design Studio Lab",
+    "description": "Master Figma design systems, wireframing, interactive prototyping, and usability testing."
+  },
+  {
+    "id": 13,
+    "title": "Battle of the Bands & Music Night",
+    "category": "CULTURAL",
+    "date": "2027-02-22",
+    "displayDate": "February 22, 2027",
+    "venue": "Open Air Amphitheater",
+    "description": "Live rock, acoustic, and fusion performances with inter-college musical bands."
+  },
+  {
+    "id": 14,
+    "title": "Annual Chess Championship",
+    "category": "SPORTS",
+    "date": "2027-03-02",
+    "displayDate": "March 02, 2027",
+    "venue": "Activity Hall 2",
+    "description": "FIDE rapid rules Swiss-system chess tournament with awards for top student grandmasters."
+  },
+  {
+    "id": 15,
+    "title": "Data Science & Python Masterclass",
+    "category": "WORKSHOP",
+    "date": "2027-03-12",
+    "displayDate": "March 12, 2027",
+    "venue": "Computer Center 4",
+    "description": "Intensive crash course on Pandas, NumPy, Scikit-learn, and predictive analytics."
+  },
+  {
+    "id": 16,
+    "title": "Alumni Career Mentorship Conclave",
+    "category": "ACADEMIC",
+    "date": "2027-03-20",
+    "displayDate": "March 20, 2027",
+    "venue": "Main Auditorium",
+    "description": "Connect with top alumni working at Google, Microsoft, and Amazon for career roadmap advice."
+  }
+]

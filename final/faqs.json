@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "category": "Account",
+    "question": "How do I register as a new student on the StudentHub portal?",
+    "answer": "Navigate to the Register page, enter your full name, student email, 10-digit mobile number, course, year, and a secure password. Agree to the Terms & Conditions and click Register."
+  },
+  {
+    "id": 2,
+    "category": "Account",
+    "question": "How can I log into my student account?",
+    "answer": "Click Login from the navigation bar, enter your Student ID (e.g. 25DCS200) or registered email address along with your password, and click the Login button."
+  },
+  {
+    "id": 3,
+    "category": "Account",
+    "question": "What should I do if I forget my password?",
+    "answer": "You can contact the department administrative coordinator or use the contact form to request a password reset through your registered college email."
+  },
+  {
+    "id": 4,
+    "category": "Account",
+    "question": "Can I update my profile details and contact number?",
+    "answer": "Yes, head over to the Profile page from the dashboard and click Edit Profile to modify your contact details and academic preferences."
+  },
+  {
+    "id": 5,
+    "category": "Events",
+    "question": "How do I browse upcoming college events?",
+    "answer": "Open the Events page. You can dynamically search by keyword, filter by categories (Sports, Tech, Cultural, Workshop, Academic), sort by date, and browse paginated listings."
+  },
+  {
+    "id": 6,
+    "category": "Events",
+    "question": "How do I register for a workshop or hackathon?",
+    "answer": "On the Events page, click the 'Register' button on the desired event card to open the registration modal, review details, and confirm your participation."
+  },
+  {
+    "id": 7,
+    "category": "Events",
+    "question": "Can I cancel my registration for an event?",
+    "answer": "Yes, you can view your registered events in your Student Dashboard and withdraw or contact the event coordinator prior to the registration deadline."
+  },
+  {
+    "id": 8,
+    "category": "Events",
+    "question": "Where are event venues located on campus?",
+    "answer": "Each event card specifies the exact venue (such as Computer Lab 3, Auditorium B, Open Air Amphitheater, or Cisco Networking Lab)."
+  },
+  {
+    "id": 9,
+    "category": "Academics",
+    "question": "Where can I view the semester examination schedule?",
+    "answer": "Academic schedules and exam timetables are posted in the Dashboard notices section and announced via the top notification banner."
+  },
+  {
+    "id": 10,
+    "category": "Academics",
+    "question": "How are SGPA and CGPA calculated on StudentHub?",
+    "answer": "SGPA is calculated based on credit points earned per subject according to Charusat university academic evaluation grading regulations."
+  },
+  {
+    "id": 11,
+    "category": "Academics",
+    "question": "What are the core subjects for Semester 3 B.Tech CSE?",
+    "answer": "Core subjects include Web Development Frameworks (WDF), Data Structures and Algorithms (DSA), Computer Networks (FCN), Discrete Mathematics, and Java OOP."
+  },
+  {
+    "id": 12,
+    "category": "Portal",
+    "question": "Does StudentHub support Dark and Light themes?",
+    "answer": "Yes! Click the '🌓 Theme' button in the top navigation header anytime to seamlessly toggle between Dark and Light mode. Your choice is automatically saved in localStorage."
+  },
+  {
+    "id": 13,
+    "category": "Portal",
+    "question": "Is StudentHub mobile-friendly and accessible?",
+    "answer": "Yes, the portal is built mobile-first with CSS Flexbox & CSS Grid, features responsive hamburger navigation, screen-reader labels, and keyboard accessibility."
+  },
+  {
+    "id": 14,
+    "category": "Portal",
+    "question": "Who can access the Admin Dashboard?",
+    "answer": "Only users authenticated with administrator credentials (e.g. admin@studenthub.com) can access the administrative monitoring panel and manage student records."
+  },
+  {
+    "id": 15,
+    "category": "Support",
+    "question": "How do I submit feedback or report a technical bug?",
+    "answer": "Visit the Contact / Feedback page, complete the message form with your inquiry or bug description, and our portal support team will assist you."
+  },
+  {
+    "id": 16,
+    "category": "Support",
+    "question": "What are the student help desk working hours?",
+    "answer": "The campus support center in Block 4 is open Monday through Friday from 9:00 AM to 5:00 PM."
+  }
+]

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit campus feedback, rating and suggestions on Student Hub Portal">
+  <title>Student Hub Portal - Feedback (Practical 2 &amp; 7)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Accessibility: Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" class="logo"></a>
+      <strong>Student Hub Portal</strong>
+    </div>
+    <div class="headerlinks">
+      <button onclick="toggleTheme()" aria-label="Toggle Dark and Light theme">🌓 Theme</button>
+      <button><a href="login.html">Login</a></button>
+      <button><a href="register.html">Register</a></button>
+    </div>
+  </header>
+
+  <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">☰ Menu</button>
+    <nav id="nav-menu" align="center" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html" style="background-color: rgba(255, 255, 255, 0.2); color: #DAF264; font-weight: bold;">Feedback</a>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 900px; width: 100%; margin: 20px auto; padding: 10px;">
+    <!-- Accessibility Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="font-size: 13px; color: #CBD5E1; margin-bottom: 15px;">
+      <a href="index.html" style="color: #EC9F05; text-decoration: none;">Home</a> &raquo;
+      <span>Feedback</span>
+    </nav>
+
+    <h1 style="font-size: 32px; text-align: center; margin-bottom: 8px;">Student Feedback &amp; Suggestions</h1>
+    <p style="text-align: center; color: #CBD5E1; margin-bottom: 24px; font-size: 15px;">
+      Your feedback drives positive improvements across campus facilities, portal features, and academic support.
+    </p>
+
+    <div class="table1" style="padding: 30px; max-width: 720px; margin: 0 auto;">
+      <h2 style="font-size: 22px; color: #EC9F05; margin-bottom: 12px; text-align: center;">Share Your Experience</h2>
+      <p style="text-align: center; color: #CBD5E1; font-size: 14px; margin-bottom: 24px;">
+        Submit your feedback below. Forms are processed securely with server-side validation and file storage (Practical 7).
+      </p>
+
+      <form action="process_contact.php" method="POST" id="feedbackForm">
+        <!-- CSRF Token for Security -->
+        <input type="hidden" name="csrf_token" value="sh_csrf_token_feedback_2026">
+
+        <div class="form-group">
+          <label for="fb-name">Full Name <span style="color: #FF5252;">*</span></label>
+          <input type="text" id="fb-name" name="name" placeholder="e.g. John Doe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fb-email">Email Address <span style="color: #FF5252;">*</span></label>
+          <input type="email" id="fb-email" name="email" placeholder="e.g. student@studenthub.edu" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fb-category">Category <span style="color: #FF5252;">*</span></label>
+          <select id="fb-category" name="category" required>
+            <option value="Portal Experience">Portal Experience &amp; Usability</option>
+            <option value="Campus Facilities">Campus Facilities &amp; Labs</option>
+            <option value="Events & Workshops">Events, Workshops &amp; Hackathons</option>
+            <option value="Academic Support">Academic Support &amp; Timetable</option>
+            <option value="Other">Other Feedback</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fb-rating">Overall Rating (1 to 5 Stars)</label>
+          <select id="fb-rating" name="rating">
+            <option value="5">⭐⭐⭐⭐⭐ Excellent (5/5)</option>
+            <option value="4" selected>⭐⭐⭐⭐ Good (4/5)</option>
+            <option value="3">⭐⭐⭐ Average (3/5)</option>
+            <option value="2">⭐⭐ Below Average (2/5)</option>
+            <option value="1">⭐ Needs Improvement (1/5)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fb-message">Your Feedback / Suggestion <span style="color: #FF5252;">*</span></label>
+          <textarea id="fb-message" name="message" rows="5" placeholder="Share your suggestions, feature requests, or campus experience..." required></textarea>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+          <button type="submit" style="padding: 12px 35px; font-size: 16px; font-weight: bold;">Submit Feedback 💬</button>
+        </div>
+
+        <div style="margin-top: 18px; text-align: center; font-size: 13px; color: #CBD5E1;">
+          <a href="view_records.php" style="color: #DAF264; text-decoration: underline;">📂 View Stored CSV/JSON Feedback Records (Practical 7)</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a> &bull;
+        <a href="contact.html">Contact</a> &bull;
+        <a href="feedback.html">Feedback</a> &bull;
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

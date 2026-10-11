@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact student help desk and submit inquiries on Student Hub Portal">
+  <title>Student Hub Portal - Contact &amp; Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Practical 2 Accessibility Extension -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" class="logo"></a>
+      <strong>Student Hub Portal</strong>
+    </div>
+    <div class="headerlinks">
+      <button onclick="toggleTheme()" aria-label="Toggle Theme">🌓 Theme</button>
+      <button><a href="login.html">Login</a></button>
+      <button><a href="register.html">Register</a></button>
+    </div>
+  </header>
+
+  <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation">☰ Menu</button>
+    <nav id="nav-menu" align="center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" style="background-color: rgba(255, 255, 255, 0.2); color: #DAF264; font-weight: bold;">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+
+  <main id="main-content" style="max-width: 1150px; width: 100%; margin: 20px auto; padding: 10px;">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="font-size: 13px; color: #CBD5E1; margin-bottom: 15px;">
+      <a href="index.html" style="color: #EC9F05; text-decoration: none;">Home</a> &raquo;
+      <span>Contact Us</span>
+    </nav>
+
+    <h1 style="font-size: 32px; text-align: center; margin-bottom: 24px;">Contact Us &amp; Campus Help Desk</h1>
+
+    <div class="dash-cards-flex" style="align-items: stretch; gap: 24px;">
+      
+      <!-- Contact Info Card -->
+      <div class="table1" style="flex: 1; padding: 30px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <h2 style="font-size: 24px; color: #EC9F05; margin-bottom: 10px;">Get in Touch</h2>
+          <p style="color: #CBD5E1; font-size: 15px; margin-bottom: 20px; line-height: 1.5;">
+            Have questions about college events, your student profile, or academic schedules? Reach out to our campus help desk directly.
+          </p>
+          <hr style="border-color: rgba(107, 78, 253, 0.4); margin: 15px 0 20px 0;">
+
+          <div style="display: flex; flex-direction: column; gap: 16px; font-size: 15px;">
+            <p>
+              <strong style="color: #EC9F05;">📧 Email :</strong><br>
+              <span style="color: #CBD5E1;">support@studenthub.com</span>
+            </p>
+            <p>
+              <strong style="color: #EC9F05;">📞 Phone :</strong><br>
+              <span style="color: #CBD5E1;">+1 (234) 567-8900 / +1 (987) 654-3210</span>
+            </p>
+            <p>
+              <strong style="color: #EC9F05;">📍 Address :</strong><br>
+              <span style="color: #CBD5E1;">Campus Center, Student Block 4, Tech Campus</span>
+            </p>
+            <p>
+              <strong style="color: #EC9F05;">🕒 Office Hours :</strong><br>
+              <span style="color: #CBD5E1;">Monday &ndash; Friday: 9:00 AM &ndash; 5:00 PM</span>
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 25px; padding: 14px; background-color: #141E2E; border-radius: 12px; border-left: 4px solid #EC9F05; font-size: 13px; color: #CBD5E1;">
+          💡 <strong>Tip:</strong> For urgent exam or admit card queries, please contact the Examination Branch in Block 2.
+        </div>
+      </div>
+
+      <!-- Feedback Form Card (Practical 7 PHP Form Processing) -->
+      <div class="table1" id="feedback" style="flex: 1.2; padding: 30px;">
+        <h2 style="font-size: 24px; color: #EC9F05; margin-bottom: 10px;">Send a Message</h2>
+        <p style="color: #CBD5E1; font-size: 15px; margin-bottom: 20px;">
+          Fill out the form below. Messages are validated server-side and stored in CSV/JSON format.
+        </p>
+
+        <form action="process_contact.php" method="POST">
+          <!-- CSRF Token -->
+          <input type="hidden" name="csrf_token" value="sh_csrf_token_contact_2026">
+
+          <div class="form-group">
+            <label for="fb-name">Your Full Name <span style="color: #FF5252;">*</span></label>
+            <input type="text" id="fb-name" name="name" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="fb-email">Your Email Address <span style="color: #FF5252;">*</span></label>
+            <input type="email" id="fb-email" name="email" placeholder="e.g. student@college.edu" required>
+          </div>
+
+          <div class="form-group">
+            <label for="fb-category">Category</label>
+            <select id="fb-category" name="category">
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="College Events">College Events &amp; Workshops</option>
+              <option value="Academic Support">Academic &amp; Exam Schedule</option>
+              <option value="Portal Feedback">Portal Technical Feedback</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fb-message">Message / Feedback <span style="color: #FF5252;">*</span></label>
+            <textarea id="fb-message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <div style="margin-top: 20px; text-align: center;">
+            <button type="submit" style="padding: 12px 35px; font-size: 16px; font-weight: bold;">Send Message 🚀</button>
+          </div>
+
+          <div style="margin-top: 16px; text-align: center; font-size: 13px; color: #CBD5E1;">
+            <a href="view_records.php" style="color: #DAF264; text-decoration: underline;">📂 View Stored Messages (Practical 7)</a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a> &bull;
+        <a href="contact.html">Contact</a> &bull;
+        <a href="feedback.html">Feedback</a> &bull;
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

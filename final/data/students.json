@@ -1,0 +1,42 @@
+[
+  {
+    "id": "25DCS001",
+    "name": "Aarav Sharma",
+    "email": "aarav.sharma@studenthub.edu",
+    "mobile": "9876543210",
+    "course": "B.Tech Computer Science",
+    "year": 3,
+    "gender": "Male",
+    "registered_at": "2026-10-09 10:15:00"
+  },
+  {
+    "id": "25DCS002",
+    "name": "Diya Patel",
+    "email": "diya.patel@studenthub.edu",
+    "mobile": "9823456781",
+    "course": "B.Tech Computer Science",
+    "year": 3,
+    "gender": "Female",
+    "registered_at": "2026-10-09 11:20:00"
+  },
+  {
+    "id": "25DIT003",
+    "name": "Rohan Mehta",
+    "email": "rohan.mehta@studenthub.edu",
+    "mobile": "9712345678",
+    "course": "B.Tech Information Technology",
+    "year": 3,
+    "gender": "Male",
+    "registered_at": "2026-10-09 12:05:00"
+  },
+  {
+    "id": "25DCS200",
+    "name": "John Doe",
+    "email": "john.doe@studenthub.edu",
+    "mobile": "9876543200",
+    "course": "B.Tech Computer Science",
+    "year": 3,
+    "gender": "Male",
+    "registered_at": "2026-10-09 14:30:00"
+  }
+]

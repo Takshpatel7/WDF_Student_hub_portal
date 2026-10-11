@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Hub Portal - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Accessibility: Skip to Content (Practical 2) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- 1. Notification Banner -->
+  <div id="notification-banner" class="notification-banner">
+    <span>📢 <strong>Notice:</strong> Tech Fest 2026 registration is now open!</span>
+    <button class="banner-close" onclick="closeBanner()">&times;</button>
+  </div>
+
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="logo.jpg" alt="Student Hub Portal Logo" class="logo"></a>
+      <strong>Student Hub Portal</strong>
+    </div>
+    <div class="headerlinks">
+      <!-- 2. Light / Dark Theme Switcher -->
+      <button onclick="toggleTheme()" aria-label="Toggle Theme">🌓 Theme</button>
+      <button><a href="login.html">Login</a></button>
+      <button><a href="register.html">Register</a></button>
+    </div>
+  </header>
+
+  <!-- 3. Hamburger Menu & Navigation -->
+  <div class="navlinks">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">☰ Menu</button>
+    <nav id="nav-menu" align="center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    <div class="main">
+      <h1>Student Hub Portal</h1>
+      <p>Manage Students &amp; College Events Easily</p>
+      <br>
+      <!-- 4. Modal Popup Trigger -->
+      <button onclick="openModal('welcomeModal')" class="btn-announcement">📢 View Announcement</button>
+    </div>
+
+    <!-- 5. Content / Announcement Slider -->
+    <div class="slider-container">
+      <div class="slide">
+        <h3>🎉 Welcome New Students!</h3>
+        <p>Orientation program starts this Monday at 10:00 AM in the Auditorium.</p>
+      </div>
+      <div class="slide">
+        <h3>🏆 Annual Sports Meet 2026</h3>
+        <p>Register your sports teams before October 20th to participate.</p>
+      </div>
+      <div class="slide">
+        <h3>💡 Hackathon Submissions Open</h3>
+        <p>Submit your software project ideas on the dashboard before Friday.</p>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" onclick="changeSlide(-1)">❮ Prev</button>
+        <button class="slider-btn" onclick="changeSlide(1)">Next ❯</button>
+      </div>
+    </div>
+
+    <br>
+
+    <div style="display: flex; gap: 20px;" class="boxes-container">
+      <div class="box">
+        <h3 style="font-size:24px; text-decoration: underline;">Latest Notice</h3>
+        <ul>
+          <li class="t1">Semester Exam Schedule Released</li>
+          <li class="t1">Holiday on Friday</li>
+          <li class="t1">Library Books Return Date</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3 style="font-size:24px; text-decoration: underline;">Upcoming Events</h3>
+        <ul>
+          <li class="t1">Tech Fest - Oct 25</li>
+          <li class="t1">AI Workshop - Nov 10</li>
+          <li class="t1">Career Seminar - Dec 02</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3 style="font-size:24px; text-decoration: underline;">Quick Links</h3>
+        <ul>
+          <li class="t1links"><a href="dashboard.html">Student Portal</a></li>
+          <li class="t1links"><a href="events.html">Events</a></li>
+          <li class="t1links"><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- 6. Modal Popup Structure -->
+  <div id="welcomeModal" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal('welcomeModal')">&times;</button>
+      <h2 style="color: #EC9F05; margin-bottom: 10px;">Important Announcement</h2>
+      <p style="margin-bottom: 15px;">Welcome to the Student Hub Portal! Check the Events section for upcoming workshops and register for campus activities.</p>
+      <button onclick="closeModal('welcomeModal')">Got it!</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <footer align="center">
+      <p>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        Copyright &copy; Student Hub Portal
+      </p>
+    </footer>
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
